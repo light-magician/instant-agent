@@ -5,13 +5,14 @@ import os
 # Add the parent directory to the path so we can import agent modules
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from agent.agent import process_request_streaming
+from agent.agent import process_request_streaming, clear_conversation, get_conversation_summary
 
 async def chat():
     """Basic chat interface for the agent."""
     print("Instant Agents CLI - Type 'quit' to exit")
     print("I can search the web and execute shell commands safely.")
-    print("-" * 50)
+    print("Commands: 'clear' to reset conversation, 'history' to see message count")
+    print("-" * 60)
     
     while True:
         try:
@@ -23,6 +24,16 @@ async def chat():
         if user_input.lower() in ['quit', 'exit', 'q']:
             print("Goodbye!")
             break
+        
+        # Special commands
+        if user_input.lower() == 'clear':
+            clear_conversation()
+            print("Conversation history cleared.")
+            continue
+        
+        if user_input.lower() == 'history':
+            print(f"📊 {get_conversation_summary()}")
+            continue
             
         if not user_input:
             continue
@@ -41,7 +52,7 @@ async def chat():
         except Exception as e:
             print(f"\nError: {str(e)}")
         
-        print()  # Add spacing between interactions
+        print("\n" + "-" * 60)  # Add divider between interactions
 
 def main():
     asyncio.run(chat())
