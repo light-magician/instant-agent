@@ -1,0 +1,21 @@
+{
+  "successful_patterns": [],
+  "failed_patterns": [],
+  "learned_commands": {},
+  "task_history": [
+    {
+      "task_id": "task_20250715_155338",
+      "query": "hello",
+      "success": false,
+      "steps_count": 0,
+      "completed_at": "2025-07-15T15:53:48.505664"
+    },
+    {
+      "task_id": "task_20250715_155412",
+      "query": "Tell me about yugioh",
+      "success": false,
+      "steps_count": 0,
+      "completed_at": "2025-07-15T15:54:21.479974"
+    }
+  ]
+}

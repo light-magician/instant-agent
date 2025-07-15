@@ -1,12 +1,14 @@
 import json
 import os
-from typing import List, Dict, Any, Optional
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from datetime import datetime
+from typing import Any, Dict, List, Optional
+
 from pydantic import BaseModel
 from pydantic_ai import Agent
 
-from agent.tools import search_web, execute_shell
+from agent.tools import execute_shell, search_web
+
 
 @dataclass
 class ExecutionStep:
