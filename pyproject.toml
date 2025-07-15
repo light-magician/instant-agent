@@ -6,8 +6,11 @@ authors = [
     {name = "light magician",email = "email@example.com"}
 ]
 readme = "README.md"
-requires-python = "^3.8"
+requires-python = ">=3.9,<4.0"
 dependencies = [
+    "pydantic-ai[openai] (>=0.4.2,<0.5.0)",
+    "python-dotenv (>=1.1.1,<2.0.0)",
+    "tavily-python (>=0.7.9,<0.8.0)"
 ]
 
 [tool.poetry]
