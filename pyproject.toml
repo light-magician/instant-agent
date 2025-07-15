@@ -1,0 +1,19 @@
+[project]
+name = "instant-agents"
+version = "0.1.0"
+description = "Examples of how to build remarkably simple agents"
+authors = [
+    {name = "light magician",email = "email@example.com"}
+]
+readme = "README.md"
+requires-python = "^3.8"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "agent"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
